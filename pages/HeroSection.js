@@ -8,14 +8,16 @@ export default function HeroSection() {
     medium: "text-4xl",
     large: "text-6xl",
   };
-
+  console.log(state);
+  console.log(state.userPreferences.fontSize);
+  console.log(fontSizeStyles[state.userPreferences.fontSize]);
   return (
     <section
       className={`bg-gray-100 dark:bg-gray-800 p-8 ${
         fontSizeStyles[state.userPreferences.fontSize]
       }`}
     >
-      <h1 className="text-4xl font-bold">
+      <h1 className=" font-bold">
         {state.theme === "light" ? "Light" : "Dark"} Theme Portfolio
       </h1>
       <p className="text-lg mt-4">

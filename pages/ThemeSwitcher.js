@@ -5,11 +5,12 @@ export default function ThemeSwitcher() {
   const { state, dispatch } = useTheme();
 
   function TOGGLE_THEME() {
+    console.log("TOGGLE_THEME");
     dispatch({ type: "TOGGLE_THEME" });
   }
 
-  function setFontSize() {
-    dispatch({ type: "SET_FONT_SIZE" });
+  function setFontSize(fontSize) {
+    dispatch({ type: "SET_FONT_SIZE", fontSize });
   }
   const toggleAnimations = () => {
     dispatch({ type: "TOGGLE_ANIMATIONS" });
