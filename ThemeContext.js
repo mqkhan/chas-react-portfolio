@@ -19,7 +19,7 @@ function themeReducer(state, action) {
         ...state,
         userPreferences: {
           ...state.userPreferences,
-          fontSize: state.fontSize,
+          fontSize: action.fontSize,
         },
       };
     case "TOGGLE_ANIMATIONS":

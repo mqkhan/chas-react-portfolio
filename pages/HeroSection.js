@@ -1,4 +1,4 @@
-import { useTheme } from "./ThemeContext";
+import { useTheme } from "../ThemeContext";
 
 export default function HeroSection() {
   const { state } = useTheme();

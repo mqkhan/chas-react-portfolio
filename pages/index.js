@@ -2,7 +2,7 @@ import HeroSection from "./HeroSection";
 import ProjectsSection from "./ProjectSection";
 import ContactSection from "./ContactSection";
 import ThemeSwitcher from "./ThemeSwitcher";
-import { useTheme } from "./ThemeContext";
+import { useTheme } from "../ThemeContext";
 
 export default function Home() {
   // const { state } = useTheme();

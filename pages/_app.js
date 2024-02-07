@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import { useEffect } from "react";
-import { ThemeProvider, useTheme } from "./ThemeContext";
+import { ThemeProvider, useTheme } from "../ThemeContext";
 
 function MyApp({ Component, pageProps }) {
   const { state } = useTheme();
