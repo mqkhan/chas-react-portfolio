@@ -12,12 +12,12 @@ const initialState = {
 
 function themeReducer(state, action) {
   switch (action.type) {
-    case "TOGGLE_THEME":
+    case "TogleTheme":
       return {
         ...state,
         theme: action.theme,
       };
-    case "SET_FONT_SIZE":
+    case "SetFontSize":
       return {
         ...state,
         userPreferences: {
@@ -25,14 +25,14 @@ function themeReducer(state, action) {
           fontSize: action.fontSize,
         },
       };
-    case "TOGGLE_ANIMATIONS":
-      return {
-        ...state,
-        userPreferences: {
-          ...state.userPreferences,
-          reduceAnimations: !state.userPreferences.reduceAnimations,
-        },
-      };
+    // case "TOGGLE_ANIMATIONS":
+    //   return {
+    //     ...state,
+    //     userPreferences: {
+    //       ...state.userPreferences,
+    //       reduceAnimations: !state.userPreferences.reduceAnimations,
+    //     },
+    //   };
     default:
       return state;
   }

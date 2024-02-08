@@ -3,26 +3,23 @@ import { useTheme } from "../ThemeContext";
 export default function ThemeSwitcher() {
   const { state, dispatch } = useTheme();
 
-  function TOGGLE_THEME() {
+  function TogleTheme() {
     dispatch({
-      type: "TOGGLE_THEME",
+      type: "TogleTheme",
       theme: state.theme === "light" ? "dark" : "light",
     });
   }
 
   function setFontSize(fontSize) {
-    dispatch({ type: "SET_FONT_SIZE", fontSize });
+    dispatch({ type: "SetFontSize", fontSize });
   }
-  function toggleAnimations() {
-    dispatch({ type: "TOGGLE_ANIMATIONS" });
-  }
+  // function toggleAnimations() {
+  //   dispatch({ type: "TOGGLE_ANIMATIONS" });
+  // }
 
   return (
     <div className="flex items-center space-x-4">
-      <button
-        className="text-blue-500 dark:text-blue-400"
-        onClick={TOGGLE_THEME}
-      >
+      <button className="text-blue-500 dark:text-blue-400" onClick={TogleTheme}>
         {state.theme === "light" ? "Switch to Dark" : "Switch to Light"}
       </button>
       <div className="flex items-center space-x-2">
@@ -38,7 +35,7 @@ export default function ThemeSwitcher() {
           <option value="large">Large</option>
         </select>
       </div>
-      <div className="flex items-center space-x-2">
+      {/* <div className="flex items-center space-x-2">
         <input
           type="checkbox"
           id="reduceAnimations"
@@ -52,7 +49,7 @@ export default function ThemeSwitcher() {
         >
           Reduce Animations
         </label>
-      </div>
+      </div> */}
     </div>
   );
 }
