@@ -5,7 +5,7 @@ const ThemeContext = createContext();
 const initialState = {
   theme: "light",
   userPreferences: {
-    fontSize: "large",
+    fontSize: "medium",
     reduceAnimations: false,
   },
 };
@@ -13,7 +13,10 @@ const initialState = {
 function themeReducer(state, action) {
   switch (action.type) {
     case "TOGGLE_THEME":
-      return { ...state, theme: state.theme === "light" ? "dark" : "light" };
+      return {
+        ...state,
+        theme: action.theme,
+      };
     case "SET_FONT_SIZE":
       return {
         ...state,

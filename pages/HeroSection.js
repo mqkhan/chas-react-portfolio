@@ -8,18 +8,14 @@ export default function HeroSection() {
     medium: "text-4xl",
     large: "text-6xl",
   };
-  console.log(state);
-  console.log(state.userPreferences.fontSize);
-  console.log(fontSizeStyles[state.userPreferences.fontSize]);
+  const textColorClass = state.theme === "dark" ? "dark:text-green" : "";
   return (
     <section
       className={`bg-gray-100 dark:bg-gray-800 p-8 ${
         fontSizeStyles[state.userPreferences.fontSize]
       }`}
     >
-      <h1 className=" font-bold">
-        {state.theme === "light" ? "Light" : "Dark"} Theme Portfolio
-      </h1>
+      <h1 className={`font-bold ${textColorClass}`}>My Portfolio</h1>
       <p className="text-lg mt-4">
         I am passionately looking for web development job opportunity in a
         company where I can apply my skills and education as well as learn new

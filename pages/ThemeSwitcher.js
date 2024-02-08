@@ -1,20 +1,21 @@
-import React from "react";
 import { useTheme } from "../ThemeContext";
 
 export default function ThemeSwitcher() {
   const { state, dispatch } = useTheme();
 
   function TOGGLE_THEME() {
-    console.log("TOGGLE_THEME");
-    dispatch({ type: "TOGGLE_THEME" });
+    dispatch({
+      type: "TOGGLE_THEME",
+      theme: state.theme === "light" ? "dark" : "light",
+    });
   }
 
   function setFontSize(fontSize) {
     dispatch({ type: "SET_FONT_SIZE", fontSize });
   }
-  const toggleAnimations = () => {
+  function toggleAnimations() {
     dispatch({ type: "TOGGLE_ANIMATIONS" });
-  };
+  }
 
   return (
     <div className="flex items-center space-x-4">
@@ -26,6 +27,7 @@ export default function ThemeSwitcher() {
       </button>
       <div className="flex items-center space-x-2">
         <label className="text-gray-600 dark:text-gray-400">Font Size:</label>
+
         <select
           value={state.userPreferences.fontSize}
           onChange={(e) => setFontSize(e.target.value)}
