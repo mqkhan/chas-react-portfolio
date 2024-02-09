@@ -10,8 +10,8 @@ export default function ThemeSwitcher() {
     });
   }
 
-  function setFontSize(fontSize) {
-    dispatch({ type: "SetFontSize", fontSize });
+  function setFontSize(e) {
+    dispatch({ type: "SetFontSize", fontSize: e.target.value });
   }
   // function toggleAnimations() {
   //   dispatch({ type: "TOGGLE_ANIMATIONS" });
@@ -27,7 +27,7 @@ export default function ThemeSwitcher() {
 
         <select
           value={state.userPreferences.fontSize}
-          onChange={(e) => setFontSize(e.target.value)}
+          onChange={setFontSize}
           className="border p-1 rounded dark:bg-gray-700"
         >
           <option value="small">Small</option>
