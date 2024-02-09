@@ -6,10 +6,7 @@ function MyApp({ Component, pageProps }) {
   const { state } = useTheme();
 
   useEffect(() => {
-    console.log(document.getElementsByTagName("html")[0]);
-    document
-      .getElementsByTagName("html")[0]
-      .classList.toggle("dark", state.theme === "dark");
+    document.getElementsByTagName("html")[0].classList.toggle("dark");
   }, [state.theme]);
 
   return <Component {...pageProps} />;
